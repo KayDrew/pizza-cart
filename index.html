@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Pizza Cart</title>
-  <link rel="stylesheet " href="./css/style.css"/> 
-  <link rel="stylesheet" href ="all.min.css"/>
-  <script  src="./js/all.min.js"></script>
-      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-      <script defer src="./js/index.js"></script>
-         
-</head>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Memory Game</title>
+        <link rel="stylesheet" href="./css/style.css">
+                <link rel="stylesheet" href="./css/all.min.css">
+                        	<script src="./js/all.min.js"></script>
+       	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    </head>
 <body>
+<div x-data="order">
 	
-<div class="container>
-	<div x-data="order">
-		<div x-data="order">
-		<div class="icon">
+	<div class="icon">
 			<p id="itemCount"> 0<p>
 				</div>
 				<div  class="icon">
 <i  id="icon" class="fa-solid fa-cart-shopping"></i>
 </div>
 <h1 id="heading">Perfect Pizza</h1>
-<div class="cart">
-<h2 style="text-align:center; padding-top:20px; padding-bottom: 30px;font-family:monospace; font-size:1.8em;">Your Cart</h2>
-<div id="right">
-<p id="large"> Large Pizza<button id="add">+</button><button id="remove">-</button><span id="quantity">0</span></p>
-<p id="medium">Medium Pizza<button id="add">+</button><button id="remove">-</button><span id="quantity">0</span></p>
-<p id="small"> Small Pizza<button id="add">+</button><button id="remove">-</button><span id="quantity">0</span></p>
-<p >Your total: R<span id="total">0.0</span>
+	
+	<div class="cart">
+		<h2 style="text-align:center; padding-top:20px; padding-bottom: 30px;font-family:monospace; font-size:1.8em;">Your Cart</h2>
+		<div id="right">
+		<span id="large"> Large Pizza</span>
+<button id="add"  @click="incrementLarge">+</button>
+<button id="remove" @click="decrementLarge">-</button>
+<span id="quantity" x-text="large"></span><br/>
+<span id="medium">Medium Pizza</span>
+<button id="add" @click="incrementMedium">+</button>
+<button id="remove"  @click="decrementMedium">-</button>
+<span id="quantity" x-text="medium"></span><br/>
+<span id="small"> Small Pizza</span>
+<button id="add" @click="incrementSmall">+</button>
+<button id="remove" @click="decrementSmall">-</button>
+<span id="quantity" x-text="small"></span><br/>
+<span>Your total: R</span><span id="total"  x-text="cartTotal">0.00</span>
 <input  id="amountPaid" type="Number" placeholder="enter cash amount">
 </div>
 <div id="center">
 	<p id="empty">Your cart is empty</p>
 <button id="checkout" >checkout</checkout>
 </div>
-</div></div>
+</div>
+
 <div class="pizzamenu">
 
 <div class="medium">
@@ -55,7 +62,7 @@
 
 </div>
 <p>Medium margherita pizza with 3 toppings max. 2 or less meat toppings.3 or less other toppings.</p>
-<button  class="buy"  @click="buy">BUY</button>
+<button  class="buy"  @click="incrementMedium">BUY</button>
 </div>
 
 
@@ -74,7 +81,7 @@
 
 </div>
 <p>Large margherita pizza with 3 toppings max. 3 meat toppings max.3 or less other toppings.</p>
-<button  class="buy"  @click="buy">BUY</button>
+<button  class="buy"  @click="incrementLarge">BUY</button>
 </div>
 
 <div class="small">
@@ -92,7 +99,7 @@
 
 </div>
 <p>Small pizza with 3 toppings max. 1 meat topping.3 or less other toppings.</p>
-<button  class="buy"  @click="buy">BUY</button>
+<button  class="buy"  @click="incrementSmall">BUY</button>
 </div>
 
 </div>
@@ -127,11 +134,16 @@
 		 
 		</div>
     </div>
-	</div>
 </div>
-  
-   
 
-  </div>
+
+</div>
+
+
 </body>
+<script src="./js/index.js"  charset="UTF-8">
+	
+
+
+</script>
 </html>
