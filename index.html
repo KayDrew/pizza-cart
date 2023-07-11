@@ -14,7 +14,7 @@
 <div x-data="order">
 	
 	<div class="icon">
-			<p id="itemCount"> 0<p>
+			<p id="itemCount" x-text="total"><p>
 				</div>
 				<div  class="icon">
 <i  id="icon" class="fa-solid fa-cart-shopping"></i>
@@ -27,21 +27,24 @@
 		<span id="large"> Large Pizza</span>
 <button id="add"  @click="incrementLarge">+</button>
 <button id="remove" @click="decrementLarge">-</button>
-<span id="quantity" x-text="large"></span><br/>
+<span id="quantity" x-text="roundedLarge"></span><br/>
 <span id="medium">Medium Pizza</span>
 <button id="add" @click="incrementMedium">+</button>
 <button id="remove"  @click="decrementMedium">-</button>
-<span id="quantity" x-text="medium"></span><br/>
+<span id="quantity" x-text="roundedMedium"></span><br/>
 <span id="small"> Small Pizza</span>
 <button id="add" @click="incrementSmall">+</button>
 <button id="remove" @click="decrementSmall">-</button>
-<span id="quantity" x-text="small"></span><br/>
-<span>Your total: R</span><span id="total"  x-text="cartTotal">0.00</span>
-<input  id="amountPaid" type="Number" placeholder="enter cash amount">
+<span id="quantity" x-text="roundedSmall"></span><br/>
+<span>Your total: R</span><span id="total"  x-text="total2">0.00</span>
+
 </div>
 <div id="center">
 	<p id="empty">Your cart is empty</p>
-<button id="checkout" >checkout</checkout>
+<button class="checkout" >checkout</button><br/><br/>
+<p id="error"  x-text="error"></p>
+<span> Amount To Pay: </span><input  id="amountPaid" type="Number" placeholder="enter cash amount" x-model="paymentAmount"/>
+<button class="pay"  @click="pay">Pay</button>
 </div>
 </div>
 

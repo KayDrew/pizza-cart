@@ -17,7 +17,7 @@ body{
 background-color: rgba(255,255,255,0.7);
 border:none;
 margin: 6px;
-
+border-radius:50%;
 
 }
 
@@ -36,7 +36,7 @@ color: rgba(0,0,0,0.7);
 #amountPaid{
 
 display: block;
-margin-left: 46%;
+margin-left: 32%;
 margin-top: 20px;
 width:150px;
 border:none;
@@ -73,7 +73,7 @@ background-color:rgba(58,134,255,0.8);
 border-radius:20px; 
 	box-shadow: 1px 1px 3px 3px rgba(251,86,7,0.4);
 	width: 400px;
-	height:400px;
+	height:470px;
 	margin-bottom:20px;
 }
 
@@ -81,13 +81,34 @@ border-radius:20px;
 text-align: center;
 }
 
-#checkout{background-color: grey;
+.checkout{
+background-color: grey;
 border-radius: 5px 5px;
 border: none;
 padding: 5px;
 font-size: 1.1em;
 font-weight: bold;
 margin-top: 35px;
+}
+
+.pay{
+
+background-color: green;
+border-radius: 5px 5px;
+border: none;
+color:white;
+padding:5px;
+width:75px;
+font-size: 1.1em;
+font-weight: bold;
+margin-top: 15px;
+}
+
+#error{
+color: red;
+font-size: 1em;
+text-align: center;
+
 }
 
 .buy{
