@@ -80,12 +80,25 @@ pay(){
 
 
 if(Number(this.paymentAmount)<this.total2){
-
 this.error="The amount is insufficient";
-
-
 }
 
+else{
+	
+this.cartTotal=0;
+this.large=0;
+this.paymentAmount=0;
+this.total=0;
+this.total2=0;
+this.medium=0;
+this.small=0;
+this.roundedLarge=0;
+this.roundedSmall=0;
+this.roundedMedium=0;
+	
+this.error="";
+
+}
 
 },
 
