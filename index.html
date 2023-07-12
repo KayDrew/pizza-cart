@@ -17,11 +17,11 @@
 			<p id="itemCount" x-text="total"><p>
 				</div>
 				<div  class="icon">
-<i  id="icon" class="fa-solid fa-cart-shopping"></i>
+<i  id="icon" class="fa-solid fa-cart-shopping" x-on:click="showCart=true"></i>
 </div>
 <h1 id="heading">Perfect Pizza</h1>
 	
-	<div class="cart">
+	<div class="cart" x-show="showCart">
 		<h2 style="text-align:center; padding-top:20px; padding-bottom: 30px;font-family:monospace; font-size:1.8em;">Your Cart</h2>
 		<div id="right">
 		<span id="large"> Large Pizza</span>

@@ -2,6 +2,10 @@ function Order(){
 
 return{
 	
+showCheckout: false,
+showInput:false,
+showPay:false,
+showCart:false,
 cartTotal:0,
 large:0,
 roundedLarge:0,
@@ -101,6 +105,7 @@ this.error="";
 }
 
 },
+
 
 
 };
