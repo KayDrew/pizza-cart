@@ -79,7 +79,7 @@ this.roundedSmall=this.small.toFixed(2);
 pay(){
 
 
-if(this.paymentAmount<this.total2){
+if(Number(this.paymentAmount)<this.total2){
 
 this.error="The amount is insufficient";
 
