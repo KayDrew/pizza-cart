@@ -6,6 +6,9 @@ showCheckout: false,
 showInput:false,
 showPay:false,
 showCart:false,
+toPayText:false,
+orderItems:false,
+empty:true,
 cartTotal:0,
 large:0,
 roundedLarge:0,
@@ -33,6 +36,18 @@ this.total2=this.cartTotal.toFixed(2);
 this.roundedLarge=this.large.toFixed(2);
 
 }
+
+if(this.total2>0){
+
+this.showCheckout=true;
+
+}
+
+else{
+
+this.showCheckout=false;
+}
+
 },
 
 	
@@ -55,6 +70,17 @@ this.total--;
 this.total2=this.cartTotal.toFixed(2);
 this.roundedMedium=this.medium.toFixed(2);
 }
+
+if(this.total2>0){
+
+this.showCheckout=true;
+
+}
+
+else{
+
+this.showCheckout=false;
+}
 },
 
 
@@ -76,7 +102,19 @@ this.cartTotal-=68.99;
 this.total--;
 this.total2=this.cartTotal.toFixed(2);
 this.roundedSmall=this.small.toFixed(2);
+
 }
+if(this.total2>0){
+
+this.showCheckout=true;
+
+}
+
+else{
+
+this.showCheckout=false;
+}
+
 },
 
 
@@ -107,6 +145,28 @@ this.error="";
 },
 
 
+displayCart(){
+
+this.showCart=true;
+
+if(this.total2>0){
+	
+this.empty=false;
+this.orderItems=true;
+this.showCheckout=true;
+console.log(this.empty);
+
+}
+
+else{
+
+this.showCheckout=false;
+this.empty=true;
+this.orderItems=false;
+console.log(this.empty);
+}
+
+},
 
 };
 }

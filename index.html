@@ -17,13 +17,13 @@
 			<p id="itemCount" x-text="total"><p>
 				</div>
 				<div  class="icon">
-<i  id="icon" class="fa-solid fa-cart-shopping" x-on:click="showCart=true"></i>
+<i  id="icon" class="fa-solid fa-cart-shopping" x-on:click="displayCart"></i>
 </div>
 <h1 id="heading">Perfect Pizza</h1>
 	
 	<div class="cart" x-show="showCart">
 		<h2 style="text-align:center; padding-top:20px; padding-bottom: 30px;font-family:monospace; font-size:1.8em;">Your Cart</h2>
-		<div id="right">
+		<div id="right" x-show="orderItems">
 		<span id="large"> Large Pizza</span>
 <button id="add"  @click="incrementLarge">+</button>
 <button id="remove" @click="decrementLarge">-</button>
@@ -40,11 +40,11 @@
 
 </div>
 <div id="center">
-	<p id="empty">Your cart is empty</p>
-<button class="checkout" >checkout</button><br/><br/>
+	<p id="empty" x-show="empty">Your cart is empty</p>
+<button class="checkout"  x-show="showCheckout"  @click="showInput=true">checkout</button><br/><br/>
 <p id="error"  x-text="error"></p>
-<span> Amount To Pay: </span><input  id="amountPaid" type="Number" placeholder="enter cash amount" x-model="paymentAmount"/>
-<button class="pay"  @click="pay">Pay</button>
+<span x-show="showInput"> Amount To Pay: </span><input  id="amountPaid" type="Number" placeholder="enter cash amount" x-model="paymentAmount" x-show="showInput"/>
+<button class="pay"  @click="pay" x-show="showInput">Pay</button>
 </div>
 </div>
 
