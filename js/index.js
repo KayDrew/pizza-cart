@@ -65,6 +65,7 @@ decrementLarge(){
 
           this.showCheckout=false;
           this.empty=true;
+              this.showInput=false;
        }
        
 
@@ -111,6 +112,7 @@ decrementMedium(){
 
         this.showCheckout=false;
         this.empty=true;
+            this.showInput=false;
     }
    
    
@@ -157,6 +159,7 @@ decrementSmall(){
 
          this.showCheckout=false;
           this.empty=true;
+          this.showInput=false;
      }
 
 },
