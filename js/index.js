@@ -19,7 +19,7 @@ roundedLarge:0,
 paymentAmount:0,
 total:0,
 total2:0,
-error:"",
+error:false,
 medium:0,
 roundedMedium:0,
 small:0,
@@ -171,7 +171,7 @@ pay(){
 
         if(Number(this.paymentAmount)<this.total2){
         	
-              this.error="The amount is insufficient";
+              this.error=true;
           }
 
      else{
@@ -186,7 +186,7 @@ pay(){
           this.roundedLarge=0;
           this.roundedSmall=0;
           this.roundedMedium=0;
-          this.error="";
+          this.error=false;
           this.showLarge=false;
          this.showMedium=false;
         this.showSmall=false;

@@ -45,9 +45,13 @@
 	<p id="empty" x-show="empty">Your cart is empty</p>
 	<button class="checkout" x-show="empty" @click="showMenu=true; showCart=false">Shop Items</button>
    <button class="checkout"  x-show="showCheckout"  @click="showInput=true">checkout</button><br/><br/>
-   <p id="error"  x-text="error"></p>
+   <p id="error"  x-show="error">The Amount Is Insufficient</p>
   <span x-show="showInput"> Amount To Pay: </span><input  id="amountPaid" type="Number" placeholder="enter cash amount" x-model="paymentAmount" x-show="showInput"/>
-  <button class="pay"  @click="pay" x-show="showInput">Pay</button>
+  <button class="pay"  @click="pay; setTimeout(function(){
+
+error=false;
+
+},3000);" x-show="showInput">Pay</button>
  </div>
 
 </div>
